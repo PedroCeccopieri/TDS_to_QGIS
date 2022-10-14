@@ -14,8 +14,8 @@ about=This plugin allows the user to retrive data from a [THREDDS](https://githu
 With this plugin the user can select and load a subset of a dataset hosted in a THREDDS server, avoiding downloading the full dataset. Only the desired data in downloaded and stored locally as a netCDF file. The file is then loaded on QGIS using the MeshLayer format. MeshLayer is used in favor of Raster for the capability of display non-orthogonal grids (e.g.: varying latitude and longitude) and non-structured grids (e.g.: common in finit elements models).
 The only non standard library needed is the [Xarray](https://docs.xarray.dev/en/stable/) python package.
 
-tracker=http://bugs
-repository=http://repo
+tracker=https://github.com/PedroCeccopieri/tds2qgis/issues
+repository=https://github.com/PedroCeccopieri/tds2qgis
 # End of mandatory metadata
 
 # Recommended items:
@@ -27,7 +27,7 @@ hasProcessingProvider=no
 # Tags are comma separated with spaces allowed
 tags=python
 
-homepage=http://homepage
+homepage=https://github.com/PedroCeccopieri/tds2qgis
 category=Plugins
 icon=icon.png
 # experimental flag
