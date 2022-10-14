@@ -1,0 +1,49 @@
+# This file contains metadata for your plugin.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=TDS2QGIS
+qgisMinimumVersion=3.0
+description=Plugin to retrive data from a THREDDS server and load as MeshLayer on QGIS.
+version=1.0
+author=Pedro Ceccopieri, Marcelo Andrioni, Thiago Pires de Paula
+email=pedroca.mc2@gmail.com, marceloandrioni@gmail.com, thiago.pdepaula@gmail.com
+
+about=This plugin allows the user to retrive data from a [THREDDS](https://github.com/Unidata/tds) (Thematic Real-time Environmental Distributed Data Services) server. This type of server is the standard to host environmental forecast and hindcast data, like wind, wave and ocean currents. There were already some previous methods to load these type of data (netCDF) in QGIS using WMS (Web Map Service), but they didn't allow the user the flexibility of easily selecting the desired time, changing the color scale range, etc.
+With this plugin the user can select and load a subset of a dataset hosted in a THREDDS server, avoiding downloading the full dataset. Only the desired data in downloaded and stored locally as a netCDF file. The file is then loaded on QGIS using the MeshLayer format. MeshLayer is used in favor of Raster for the capability of display non-orthogonal grids (e.g.: varying latitude and longitude) and non-structured grids (e.g.: common in finit elements models).
+The only non standard library needed is the [Xarray](https://docs.xarray.dev/en/stable/) python package.
+
+tracker=http://bugs
+repository=http://repo
+# End of mandatory metadata
+
+# Recommended items:
+
+hasProcessingProvider=no
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=python
+
+homepage=http://homepage
+category=Plugins
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
+# Since QGIS 3.8, a comma separated list of plugins to be installed
+# (or upgraded) can be specified.
+# Check the documentation for more information.
+# plugin_dependencies=
+
+Category of the plugin: Raster, Vector, Database or Web
+# category=
+
+# If the plugin can run on QGIS Server.
+server=False
+
