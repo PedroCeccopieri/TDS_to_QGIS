@@ -12,7 +12,7 @@ class windowView():
         self.wnd = wnd
         self.tempDir = Path(tempfile.gettempdir())
         self.wnd.tempLineEdit.setText(str(self.tempDir))
-        
+
 
     def showWindow(self):
 

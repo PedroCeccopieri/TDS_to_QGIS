@@ -8,7 +8,7 @@ class windowModel():
         self.datasets = None
 
     def openJson(self, url):
-        """ Try to access the URL given in "Dataset Configuration File" 
+        """ Try to access the URL given in "Dataset Configuration File"
             and gets the (name, url, style) for each dataset from the json file. """
         try:
 
