@@ -63,9 +63,10 @@ class tds2Qgis:
         self.actions = []
         self.menu = self.tr(u'&TDS to QGIS')
 
-        # Check if plugin was started the first time in current QGIS session
-        # Must be set in initGui() to survive plugin reloads
-        self.first_start = None
+        self.control = windowControl()
+
+        self.firstRun = True
+        self.isRunning = False
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -167,10 +168,6 @@ class tds2Qgis:
             callback=self.run,
             parent=self.iface.mainWindow())
 
-        # will be set False in run()
-        self.first_start = True
-
-
     def unload(self):
         """Removes the plugin menu item and icon from QGIS GUI."""
         for action in self.actions:
@@ -183,8 +180,14 @@ class tds2Qgis:
     def run(self):
         """Run method that performs all the real work"""
 
-        # Create the dialog with elements (after translation) and keep reference
-        # Only create GUI ONCE in callback, so that it will only load when the plugin is started
-        if self.first_start == True:
-            self.first_start = False
-            self.control = windowControl()
+        if (self.firstRun):
+            self.control.show(True, True)
+            self.firstRun = False
+
+        if not (self.isRunning):
+            self.isRunning = True
+            self.control.show(True)
+        else:
+            self.isRunning = False
+            self.control.show(False)
+

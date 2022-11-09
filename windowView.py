@@ -13,10 +13,17 @@ class windowView():
         self.tempDir = Path(tempfile.gettempdir())
         self.wnd.tempLineEdit.setText(str(self.tempDir))
 
+    def addWindow(self):
+
+        iface.mainWindow().addDockWidget(Qt.LeftDockWidgetArea, self.wnd)
 
     def showWindow(self):
 
-        iface.mainWindow().addDockWidget(Qt.LeftDockWidgetArea, self.wnd)
+        self.wnd.show()
+
+    def hideWindow(self):
+
+        self.wnd.hide()
 
     def browseJson(self):
 

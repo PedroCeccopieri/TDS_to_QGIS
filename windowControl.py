@@ -30,7 +30,16 @@ class windowControl():
 
         self.desableBoxes()
 
-        self.view.showWindow()
+    def show(self, state, firstRun = False):
+
+        if (firstRun):
+            self.view.addWindow()
+            return
+
+        if (state):
+            self.view.showWindow()
+        else:
+            self.view.hideWindow()
 
     def desableBoxes(self, boxes = [True,True,True,True]):
 
